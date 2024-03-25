@@ -13,10 +13,19 @@ const Index = () => {
   };
 
   const renderLoginPage = () => (
-    <Flex direction="column" align="center" justify="center" minHeight="100vh">
-      <Heading as="h1" size="xl" mb={8}>
-        Welcome to Shpins
-      </Heading>
+    <Flex direction="column" align="center" justify="center" minHeight="100vh" backgroundImage="url('https://example.com/shpins-logo.jpg')" backgroundSize="cover" backgroundPosition="center">
+      <Box backgroundColor="rgba(255, 255, 255, 0.8)" p={8} borderRadius="md" boxShadow="lg">
+        <Heading as="h1" size="xl" mb={8}>
+          Welcome to Shpins
+        </Heading>
+        <Box width="300px">
+          <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} mb={4} />
+          <Input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} mb={4} />
+          <Button colorScheme="blue" onClick={handleLogin}>
+            Login
+          </Button>
+        </Box>
+      </Box>
       <Box width="300px">
         <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} mb={4} />
         <Input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} mb={4} />
@@ -28,31 +37,38 @@ const Index = () => {
   );
 
   const renderVehiclesPage = () => (
-    <Box p={8}>
-      <Heading as="h1" size="xl" mb={8}>
-        Available Vehicles
+    <Box p={8} backgroundColor="gray.100">
+      <Heading as="h1" size="xl" mb={8} color="blue.600">
+        Available Vehicles in Mombasa
       </Heading>
       <Stack spacing={8}>
-        <Box>
-          <Image src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzExMzU1NDk0fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Car 1" mb={4} />
-          <Heading as="h2" size="lg">
+        <Box backgroundColor="white" p={6} borderRadius="md" boxShadow="md">
+          <Image src="https://example.com/car.jpg" alt="Car" mb={4} borderRadius="md" />
+          <Heading as="h2" size="lg" color="blue.600">
             Sedan
           </Heading>
-          <Text>Price: KES 5,000 per day</Text>
+          <Text fontSize="xl" fontWeight="bold" color="green.600">Price: KES 5,000 per day</Text>
         </Box>
-        <Box>
-          <Image src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxzdXYlMjByZW50YWx8ZW58MHx8fHwxNzExMzU1NDk0fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Car 2" mb={4} />
-          <Heading as="h2" size="lg">
-            SUV
+        <Box backgroundColor="white" p={6} borderRadius="md" boxShadow="md">
+          <Image src="https://example.com/motorbike.jpg" alt="Motorbike" mb={4} borderRadius="md" />
+          <Heading as="h2" size="lg" color="blue.600">
+            Motorbike
           </Heading>
-          <Text>Price: KES 8,000 per day</Text>
+          <Text fontSize="xl" fontWeight="bold" color="green.600">Price: KES 2,000 per day</Text>
         </Box>
-        <Box>
-          <Image src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx2YW4lMjByZW50YWx8ZW58MHx8fHwxNzExMzU1NDk1fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Car 3" mb={4} />
-          <Heading as="h2" size="lg">
-            Van
+        <Box backgroundColor="white" p={6} borderRadius="md" boxShadow="md">
+          <Image src="https://example.com/plane.jpg" alt="Plane" mb={4} borderRadius="md" />
+          <Heading as="h2" size="lg" color="blue.600">
+            Plane
           </Heading>
-          <Text>Price: KES 10,000 per day</Text>
+          <Text fontSize="xl" fontWeight="bold" color="green.600">Price: KES 50,000 per hour</Text>
+        </Box>
+        <Box backgroundColor="white" p={6} borderRadius="md" boxShadow="md">
+          <Image src="https://example.com/yacht.jpg" alt="Yacht" mb={4} borderRadius="md" />
+          <Heading as="h2" size="lg" color="blue.600">
+            Yacht
+          </Heading>
+          <Text fontSize="xl" fontWeight="bold" color="green.600">Price: KES 100,000 per day</Text>
         </Box>
       </Stack>
     </Box>
